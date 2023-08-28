@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "deploy": "NODE_ENV=production pm2 start index.js --name code-ite -i max",
+    "kill": "pm2 delete code-ite"
   },
   "repository": {
     "type": "git",

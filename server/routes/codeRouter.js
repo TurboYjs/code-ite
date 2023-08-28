@@ -4,6 +4,7 @@ const fs = require('fs')
 const cCompiler = require('../compiler/c')
 const cppCompiler = require('../compiler/cpp')
 const javaCompiler = require('../compiler/java')
+const nodeCompiler = require('../compiler/node')
 // args //code //lang
 //encode / decode
 const decodeRes = (str) => {
@@ -81,6 +82,18 @@ codeRouter.route('/')
                     deleteFile('Main.class')
                     deleteFile('Main.Java')
                     deleteFile('myObjects.txt')
+                    deleteFile('input.txt')
+                })
+            case "typescript": return nodeCompiler.nodeExecute(code, args)
+                .then(data => {
+                    var output = encodeRes(data)
+                    res.end(JSON.stringify(output));
+                    deleteFile('Node.js')
+                    deleteFile('input.txt')
+                })
+                .catch(err => {
+                    res.end(JSON.stringify(err));
+                    deleteFile('Node.js')
                     deleteFile('input.txt')
                 })
         }

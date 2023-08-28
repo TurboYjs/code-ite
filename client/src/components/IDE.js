@@ -15,7 +15,7 @@ const IDE = ({ socket }) => {
   const editorRef = useRef("");
   const monacoRef = useRef("");
   const { room } = useParams();
-  const langRef = useRef("");
+  const langRef = useRef("typescript");
 
   let isadmin = useRef(false);
   let isWorkingData = useRef(false);
@@ -271,10 +271,7 @@ const IDE = ({ socket }) => {
                 setEditorData({ lang: langRef.current.value });
               }}
             >
-              <option value="0">Language</option>
-              <option value="cpp">C++</option>
-              <option value="c">C</option>
-              <option value="java">Java</option>
+              <option value="typescript">typescript</option>
             </select>
           </div>
           <button

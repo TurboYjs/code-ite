@@ -3,17 +3,17 @@ const cors = require("cors");
 const app = express();
 const server = require("http").Server(app);
 const cookieParser = require("cookie-parser");
-const pool = require("./config/db");
+// const pool = require("./config/db");
 //env file
 require("dotenv").config();
 
-pool.getConnection((err, conn) => {
-  if (err) {
-    console.log("connection error", err);
-  } else {
-    console.log("connected to db");
-  }
-});
+// pool.getConnection((err, conn) => {
+//   if (err) {
+//     console.log("connection error", err);
+//   } else {
+//     console.log("connected to db");
+//   }
+// });
 //cors and parser
 app.use(cors({
   origin: process.env.FRONTEND_URL,

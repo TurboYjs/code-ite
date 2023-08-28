@@ -25,7 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "set HTTPS=true&&react-scripts start"
+    "dev": "set HTTPS=true&&react-scripts start",
+    "deploy": "pm2 start dist/app.js --name code-ite -i max",
+    "kill": "pm2 delete code-ite"
   },
   "eslintConfig": {
     "extends": [

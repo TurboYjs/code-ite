@@ -5,8 +5,8 @@ const cookieParser = require("cookie-parser");
 
 useRouter.use(cookieParser());
 //Authentication Router
-const authRouter = require('./routes/authRouter');
-useRouter.use('/auth', authRouter);
+// const authRouter = require('./routes/authRouter');
+// useRouter.use('/auth', authRouter);
 
 //Create new room router
 const roomRouter = require('./routes/roomRouter');

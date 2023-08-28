@@ -1,14 +1,14 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+// import Footer from '../components/Footer'
+// import Header from '../components/Header'
 import LeftHeroSection from '../components/LeftHeroSection'
 import heroImg from '../assets/svg/collaboration.svg'
-import About from '../components/About'
+// import About from '../components/About'
 
 const Home = () => {
     return (
         <div>
-            <Header />
+            {/*<Header />*/}
             <div className="container">
 
                 <div className="row justify-content-center">
@@ -21,9 +21,9 @@ const Home = () => {
                 </div>
             </div>
 
-            <About />
+            {/*<About />*/}
 
-            <Footer />
+            {/*<Footer />*/}
 
         </div>
     )

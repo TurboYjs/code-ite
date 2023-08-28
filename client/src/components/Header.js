@@ -122,25 +122,6 @@ const Header = () => {
                     <h5 className={` mx-3 my-1 h5 ${darkMode ? "textColor" : ""
                       }`}>{window.location.pathname.split("/")[1] === 'room' ? `hi,${username()}` : ""}</h5>
                   </span>
-                  <Link to="/login" className="me-4 ">
-
-                    <button
-                      type="button"
-                      className={`btn btn-outline-dark text-nowrap px-4 py-2 rounded-0 ${darkMode ? "white-btn" : ""
-                        }`}
-                    >
-                      Login
-                    </button>
-                  </Link>
-                  <Link to="/signup">
-                    <button
-                      type="button"
-                      className={`btn btn-dark text-nowrap px-4 py-2 rounded-0 ${darkMode ? "black-btn" : ""
-                        }`}
-                    >
-                      Sign Up
-                    </button>
-                  </Link>
                 </form>
               </div>
             )}

@@ -6,8 +6,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./core/Home";
-import Login from "./core/Login";
-import Signup from "./core/Signup";
 import Editor from "./core/Editor";
 import { v4 as uuidv4 } from "uuid";
 import ContextProvider from "./context/GlobalContext";
@@ -20,8 +18,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
           <Route
             path="join"
             element={<Navigate replace to={`/room/${uuidv4()}`} />}

@@ -1,7 +1,7 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
-    "dev": "pnpm -r dev",
+    "dev": "pnpm -r start",
     "build": "pnpm -r build",
     "release": "bumpp package.json --commit --push --tag --all"
   },

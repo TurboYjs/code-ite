@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const useRouter = require("./router");
-app.use("/", useRouter);
+app.use("/api", useRouter);
 
 //socket yaha hai
 const io = require("socket.io")(server, {
@@ -27,6 +27,7 @@ const io = require("socket.io")(server, {
   },
   pingTimeout: 60000,
   upgradeTimeout: 30000,
+  path: "/api/"
 });
 require("./socket/socketEditorAdapter")(io);
 

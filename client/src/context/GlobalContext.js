@@ -4,7 +4,7 @@ import { API } from "../backend";
 
 
 const initialEditorData = {
-  lang: "",
+  lang: "typescript",
   args: "",
   code: "",
 };

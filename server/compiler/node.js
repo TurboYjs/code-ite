@@ -1,5 +1,5 @@
-const compiler = "node";
-const infile = "index.js";
+const compiler = "ts-node";
+const infile = "Node.ts";
 const fs = require('fs')
 const { exec } = require("child_process");
 const sf = require('../js/saveFile')
@@ -16,51 +16,22 @@ const nodeExecute = (code, args) => {
                         if (err) {
                             console.log("error")
                             reject()
+                        } else {
+                            exec(`ts-node ${infile} < input.txt`, (err, stdout, stderr) => {
+                                if (err) {
+                                    console.log("ERROR " + err)
+                                    resolve({
+                                        err: true,
+                                        output: err,
+                                        error: stderr
+                                    })
+                                }
+
+                                console.log("OUTPUT ", stdout)
+                                resolve(stdout)
+                            })
                         }
                     })
-                exec('node Node.js < ' + 'input.txt', (err, stdout, stderr) => {
-                    if (err) {
-                        console.log("ERROR " + err)
-                        resolve({
-                            err: true,
-                            output: err,
-                            error: stderr
-                        })
-                    }
-
-                    console.log("OUTPUT ", stdout)
-                    resolve(stdout)
-                })
-
-                // exec(`${compiler} ${infile}`, (error, stdout, stderr) => {
-                //     if (error) {
-                //         console.log(`error: ${error.message}`);
-                //         resolve(error.message)
-                //         return;
-                //     }
-                //     if (stderr) {
-                //         console.log(`stderr: ${stderr}`);
-                //         resolve(stderr)
-                //         return;
-                //     }
-                //     console.log("SUCCESSFULLY COMPILED")
-                //
-                //     exec('java Main < ' + 'input.txt', (err, stdout, stderr) => {
-                //         if (err) {
-                //             console.log("ERROR " + err)
-                //             resolve({
-                //                 err: true,
-                //                 output: err,
-                //                 error: stderr
-                //             })
-                //         }
-                //
-                //         console.log("OUTPUT ", stdout)
-                //         resolve(stdout)
-                //     })
-                //
-                // });
-
             })
             .catch(() => {
                 console.log("ERROR SAVE FILE")
@@ -75,4 +46,5 @@ const nodeExecute = (code, args) => {
 
 module.exports = {
     nodeExecute,
+    infile
 }

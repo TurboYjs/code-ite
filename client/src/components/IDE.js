@@ -57,6 +57,7 @@ const IDE = ({ socket }) => {
     }
 
     socket.on("connect", () => {
+      debugger
       console.log("connect!!");
       socket.emit("join-room", room, username());
     });
@@ -249,10 +250,10 @@ const IDE = ({ socket }) => {
   };
 
   const handleEditorChange = (value) => {
-    sessionStorage.setItem(langRef.current.value, value)
+    sessionStorage.setItem(editorData.lang, value)
   }
   const defaultEditorValue = () => {
-    return sessionStorage.getItem(langRef.current.value) || ExampleCode[langRef.current.value]
+    return sessionStorage.getItem(editorData.lang) || ExampleCode[editorData.lang]
   }
   return (
     <>

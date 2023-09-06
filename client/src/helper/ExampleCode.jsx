@@ -46,6 +46,11 @@ return 0;
       return 0;
   }
   
+  `),
+  typescript: rTabs(`
+    function main(a:string) {
+      return a
+    }
   `)
 };
 

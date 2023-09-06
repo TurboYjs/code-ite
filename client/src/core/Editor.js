@@ -27,12 +27,6 @@ const Editor = () => {
     <>
       <Header />
       <div className={`${darkMode ? "PrimaryDark" : ""}`}>
-        <Split
-          initialPrimarySize="60%"
-          minPrimarySize="15%"
-          minSecondarySize="10%"
-          className="d-block d-md-flex flex-column"
-        >
           <Split
             horizontal
             initialPrimarySize="70%"
@@ -40,18 +34,15 @@ const Editor = () => {
             minSecondarySize="20px"
           >
             <IDE socket={socket} />
-            <Input />
+            <Split
+                initialPrimarySize="50%"
+                minPrimarySize="20px"
+                minSecondarySize="20px"
+            >
+              <Input />
+              <Output />
+            </Split>
           </Split>
-          <Split
-            horizontal
-            initialPrimarySize="70%"
-            minPrimarySize="20px"
-            minSecondarySize="20px"
-          >
-            <Whiteboard socket={socket} />
-            <Output />
-          </Split>
-        </Split>
       </div>
     </>
   );

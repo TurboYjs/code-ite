@@ -88,13 +88,9 @@ codeRouter.route('/')
                 .then(data => {
                     var output = encodeRes(data)
                     res.end(JSON.stringify(output));
-                    deleteFile(nodeCompiler.infile)
-                    deleteFile('input.txt')
                 })
                 .catch(err => {
                     res.end(JSON.stringify(err));
-                    deleteFile(nodeCompiler.infile)
-                    deleteFile('input.txt')
                 })
         }
     })

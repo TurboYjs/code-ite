@@ -57,7 +57,6 @@ const IDE = ({ socket }) => {
     }
 
     socket.on("connect", () => {
-      debugger
       console.log("connect!!");
       socket.emit("join-room", room, username());
     });

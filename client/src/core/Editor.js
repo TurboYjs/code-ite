@@ -12,7 +12,7 @@ import { editorDetailsContext } from "../context/GlobalContext";
 
 const Editor = () => {
   let socket;
-  socket = io(new URL(API).origin);
+  socket = io(API);
   const { darkMode } = useContext(editorDetailsContext);
   useEffect(() => {
     console.log(`Connecting socket...`);

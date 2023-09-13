@@ -27,6 +27,7 @@ const io = require("socket.io")(server, {
   },
   pingTimeout: 60000,
   upgradeTimeout: 30000,
+  path: '/api/'
 });
 require("./socket/socketEditorAdapter")(io);
 

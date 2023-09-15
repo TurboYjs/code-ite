@@ -11,7 +11,7 @@ require("dotenv").config({
 //cors and parser
 app.use(cors({
   cors: {
-    origin: "*",
+    origin: ['http://localhost:5001','https://guxukai.tech'],
     methods: ["GET", "POST"],
     transports: ['websocket', 'polling'],
     credentials: true

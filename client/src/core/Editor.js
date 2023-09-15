@@ -14,6 +14,7 @@ const Editor = () => {
   let socket;
   socket = io(new URL(API).origin, {
       // path: '/socket/'
+      withCredentials: true
   });
   const { darkMode } = useContext(editorDetailsContext);
   useEffect(() => {

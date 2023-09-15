@@ -10,8 +10,8 @@ require("dotenv").config({
 });
 //cors and parser
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true
+  origin: "*",
+  // credentials: true
 }));
 app.use(cookieParser());
 app.use(express.json());
@@ -31,3 +31,5 @@ require("./socket/socketEditorAdapter")(io);
 server.listen(process.env.PORT || 5001, () => {
   console.log(`http://localhost:${process.env.PORT || 5001}`);
 });
+// /etc/nginx/ssl
+// guxukai.tech_bundle.crt  guxukai.tech_bundle.pem  guxukai.tech.csr  guxukai.tech.key

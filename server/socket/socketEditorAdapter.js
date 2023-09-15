@@ -30,6 +30,10 @@ module.exports = (io) => {
                 //File Data Event
                 socket.broadcast.to(roomId).emit("resetdata", data); //Give File Data
             });
+            socket.on("selection", (data) => {
+                //File Data Event
+                socket.broadcast.to(roomId).emit("selection", data); //Give File Data
+            });
             socket.on('whiteboard', (data) => {
                 socket.broadcast.to(roomId).emit('whiteboard', data);
             });

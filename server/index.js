@@ -24,11 +24,7 @@ app.use("/api", useRouter);
 const io = require("socket.io")(server, {
   cors: {
     origin: "*",
-    withCredentials: true
   },
-  pingTimeout: 60000,
-  upgradeTimeout: 30000,
-  // path: '/socket/'
 });
 require("./socket/socketEditorAdapter")(io);
 

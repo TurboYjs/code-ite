@@ -10,8 +10,13 @@ require("dotenv").config({
 });
 //cors and parser
 app.use(cors({
-  origin: "*",
-  // credentials: true
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+    transports: ['websocket', 'polling'],
+    credentials: true
+  },
+  allowEIO3: true
 }));
 app.use(cookieParser());
 app.use(express.json());

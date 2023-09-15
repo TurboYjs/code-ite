@@ -249,7 +249,7 @@ const IDE = ({ socket }) => {
   };
 
   const handleEditorChange = (value) => {
-    sessionStorage.setItem(editorData.lang, value)
+    sessionStorage.setItem(langRef.current.value, value)
   }
   const defaultEditorValue = () => {
     return sessionStorage.getItem(editorData.lang) || ExampleCode[editorData.lang]
@@ -395,7 +395,6 @@ const IDE = ({ socket }) => {
           }
           loading={<Loader />}
           onChange={handleEditorChange}
-          path={langRef.current.value}
         />
       </div>
       <ToastContainer pauseOnFocusLoss={false} />
